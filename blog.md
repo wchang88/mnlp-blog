@@ -1,4 +1,4 @@
-Winnie Chang and Tianyue Ou, Multilingual Natural Language Processing Blog
+Winnie Chang [winniech] and Tianyue Ou, Multilingual Natural Language Processing Blog
 # Hallucinations in Large Multilingual Translation Models    
 
 >  What is Hallucination?
