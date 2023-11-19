@@ -84,10 +84,10 @@ The authors defined hallucinations under perturbation as when a model produces a
 2. **Natural hallucinations**
 In contrast to hallucinations under perturbation where hallucinations are purposefully induced, natural hallucinations are mistranslations that occur without any alteration to the source text. The authors further define two types of hallucinations defined in previous work on hallucinations.
     1. *Largely Fluent Detached Hallucinations*
-    Translations that are fluent in the target language but have little to no relation to the source text.
+    Translations that are fluent in the target language but have little to no relation to the source text. \
     ![Example of detached hallucination](./detached%20hallucination.png)
     2. *Oscillatory Hallucinations*
-    Translations that are inadequate and contain repetitions of words and/or phrases.  
+    Translations that are inadequate and contain repetitions of words and/or phrases.  \
     ![Example of oscillatory hallucination](./oscillatory%20hallucination.png)
  
 #### Key Insights
