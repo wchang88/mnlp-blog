@@ -1,4 +1,4 @@
-Paper: Hallucinations in Large Translation Models
+Paper: Hallucinations in Large Multilingual Translation Models
 
 Team Members: Winnie Chang (winniech) and Tianyue Ou (tianyueo)
 
