@@ -68,32 +68,32 @@ With the motivation to bridge this knowledge gap, Guerreiro et al. [1] conduct a
 ##### Models
 1. **FAIR's M2M-100 family of models** [2] \
 Representing the class of models based on the standard approach to multilingual models, the authors evaluated the M2M-100 family of models, transformer-based supervised multilingual neural machine translation models trained on 7.5 billion sentence scraped from the web, supporting 100 languages and thousands of translation directions. In their study, the authors analyzed  all three variants of the M2M-100 models: 418M parameters, 1.2B parameters, and 12B parameters. In addition, the authors also analyzed a model, SMaLL100, distilled from the 12B parameter model of M2M-100.
-
 2. **ChatGPT** [3] \
 Representing the class of general-purpose large language models (LLMs), the authors evaluated ChatGPT, a large-scale model with 175B parameters.
 
 ##### Datasets
 1. **Flores-100** [4] \
 The Flores-101 dataset is a highly multilingual dataset compiled from 101 languages across Wikipedia that allows for analysis across many different language pairs.
-
 2. **WMT** \
 The WMT datasets, compiled yearly, are a collection of mostly English-X samples in the news domain. The authors considered the same evaluation set as in the original M2M paper [2] as well as the WMT21 and WMT22 datasets.
-
 3. **TICO** [5] \
 The TICO dataset is a multilingual dataset in the medical domain.
 
 ##### Hallucination Types
 1. **Hallucinations under perturbation** \
 The authors defined hallucinations under perturbation as when a model produces a significantly qualitatively reduced translation when any part of the original source text is altered, such as with spelling or capitalization mistakes, when compared to the translation of the un-altered source text.
-
-2. **Natural hallucinations**  \
+2. **Natural hallucinations** \
 In contrast to hallucinations under perturbation where hallucinations are purposefully induced, natural hallucinations are mistranslations that occur without any alteration to the source text. The authors further define two types of hallucinations defined in previous work on hallucinations.
     1. *Largely Fluent Detached Hallucinations* \
     Translations that are fluent in the target language but have little to no relation to the source text. \
     ![Example of detached hallucination](./detached%20hallucination.png)
     2. *Oscillatory Hallucinations* \
-    Translations that are inadequate and contain repetitions of words and/or phrases. \
+    Translations that are inadequate and contain repetitions of words and/or phrases.  \
     ![Example of oscillatory hallucination](./oscillatory%20hallucination.png)
+
+##### Hallucination Distributions 
+- The graph below shows the hallucination rates for each language pairs(ranked from the lowest resource to the highest resource) in four tested models(SMaLL100, M2M(S), M2M(M), M2M(L)). The general trend is that higher resource prevents hallucination from happening. However, there are also some very interesting outliers such as crotian-english(en-hr), which has low hallucination rate in both directions despite its lack of resource. English-Russian is interesting too. Going from russian to english doesn't suffer much hallucination, while the opposite direction, English to Russian has quite significant hallucination rate, despite being one of the highest resource pairs.
+![Hallucination rate on all language pairs](./heat_map_hallucinations.png) 
  
 #### Key Insights
 -  **Hallucination rates under perturbation decrease as resource levels increase** \
@@ -110,10 +110,10 @@ Even source texts with the highest quality translations suffered from significan
 ChatGPT produced more hallucinations for mid-resource languages than low-resource languages, as compared to the M2M models. Hallucinations from ChatGPT often fall under the category of off-target translations, overgeneration, or failed attempts to generate where the model does not even attempt to translate and just returns a general error message. ChatGPT also produces no oscillatory hallucinations as compared to traditional neural machine translation models. Furthermore, the authors found that most errors are reversed when prompting again.
 
 - **Hallucinations in low-resource languages are more frequent and distinct from hallucinations in high- and mid-resource languages** \
-Hallucinations in low-resource language tend to be detached hallucinations as compared to oscillatory hallucinations, which suggests that models tend not to rely on source text when translation into and out of low-resource languages. 
+Hallucinations in low-resource language tend to be detached hallucinations as compared to oscillatory hallucinations, which suggests that models tend not to rely on source text when translation into and out of low-resource languages.
 
 -  **Translation direction affect the rate and type of hallucinations** \
-Translation with English as the source language result in more frequent hallucination that the reverse. \
+Translation with English as the source language result in more frequent hallucination that the reverse.  \
 Furthermore, when translating out of English, most hallucinations are of the detached type. On the other hand, oscillatory hallucinations account for almost all hallucinations when translating into English from mid- and high-resource languages. 
 
 -  **Low resource language pairs are particularly susceptible to toxic hallucinations** \
@@ -126,6 +126,10 @@ In contrast to earlier work on hallucinations in specialized domains that focuse
 ![Average Hallucination Rates on Flores-100 and TICO for Low-Resource Languages](./Hallucination%20Rates%20for%20Flores-100%20and%20TICO%20on%20Low-Resource%20Languages.png) 
 ![Average Hallucination Rates on Flores-100 and TICO for Mid-Resource Languages](./Hallucination%20Rates%20for%20Flores-100%20and%20TICO%20on%20Mid-Resource%20Languages.png) 
 ![Average Hallucination Rates on Flores-100 and TICO for High-Resource Languages](./Hallucination%20Rates%20on%20Flores-100%20and%20TICO%20on%20High-Resource%20Languages.png)
+
+- **A different translation model can serve as fall back to mitigate hallucinations**
+A method of using a fall-back model when hallucination occurs is also studied. In general, this greatly improves the overall performance. In paritcular, models such as NLLB and GPT would greatly improve performance in low resource scenarios, similarly when serving as fall-back for smaller models. In the graph below, we can see that SMaLL100 and M2M(S) are both greatly improved by their fall-back models when resources are high.
+![Performance with fall back models](./fall_back_discussion.png)
 
 ### Conclusion
 The case study by Guerreiro et al. provides good insight into the properties of hallucinations in large-scale translation models.  Although, as the authors themselves acknowledge, there are limitations to their conclusions and the generalizability to other large-scale multilingual models, it is a good start into bridging the knowledge gap between small-scale dedicated translation models and large-scale multilingual translation models.
