@@ -1,3 +1,4 @@
+<!-- title: 11737 Blog - Hallucinations -->
 Winnie Chang [winniech] and Tianyue Ou[tianyueo], Multilingual Natural Language Processing Blog
 # Hallucinations in Large Multilingual Translation Models    
 
