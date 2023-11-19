@@ -116,24 +116,24 @@ In contrast to hallucinations under perturbation where hallucinations are purpos
 <ol>
 <li><em>Largely Fluent Detached Hallucinations</em> <br>
 Translations that are fluent in the target language but have little to no relation to the source text. <br>
-<img src="file:///c:\Users\lasth\Documents\mnlp-blog\detached%20hallucination.png" alt="Example of detached hallucination"></li>
+<img src="detached hallucination.png" alt="Example of detached hallucination"></li>
 <li><em>Oscillatory Hallucinations</em> <br>
 Translations that are inadequate and contain repetitions of words and/or phrases.  <br>
-<img src="file:///c:\Users\lasth\Documents\mnlp-blog\oscillatory%20hallucination.png" alt="Example of oscillatory hallucination"></li>
+<img src="oscillatory hallucination.png" alt="Example of oscillatory hallucination"></li>
 </ol>
 </li>
 </ol>
 <h5 id="hallucination-distributions">Hallucination Distributions</h5>
 <ul>
 <li>The graph below shows the hallucination rates for each language pairs(ranked from the lowest resource to the highest resource) in four tested models(SMaLL100, M2M(S), M2M(M), M2M(L)). The general trend is that higher resource prevents hallucination from happening. However, there are also some very interesting outliers such as crotian-english(en-hr), which has low hallucination rate in both directions despite its lack of resource. English-Russian is interesting too. Going from russian to english doesn't suffer much hallucination, while the opposite direction, English to Russian has quite significant hallucination rate, despite being one of the highest resource pairs.
-<img src="file:///c:\Users\lasth\Documents\mnlp-blog\heat_map_hallucinations.png" alt="Hallucination rate on all language pairs"></li>
+<img src="heat_map_hallucinations.png" alt="Hallucination rate on all language pairs"></li>
 </ul>
 <h4 id="key-insights">Key Insights</h4>
 <ul>
 <li>
 <p><strong>Hallucination rates under perturbation decrease as resource levels increase</strong> <br>
 More parallel data allows for models to better handle source-side errors.
-<img src="file:///c:\Users\lasth\Documents\mnlp-blog\resouce_level_line_graph.png" alt="Hallucination rate on resource level"></p>
+<img src="resouce_level_line_graph.png" alt="Hallucination rate on resource level"></p>
 </li>
 <li>
 <p><strong>Uniform sampling across all language pairs during training could reduce hallucinations</strong> <br>
@@ -166,14 +166,14 @@ Not only do toxic hallucinations - hallucinations that contain words classified 
 <li>
 <p><strong>The impact of domain shift is potentially mitigated by highly generalized training data</strong> <br>
 In contrast to earlier work on hallucinations in specialized domains that focused on small models trained on a single domain, the vastly generalized training corpus across a broad range of domains of the M2M models potentially minimzes the effect of domain shift and reduces the chances of hallucinations. <br>
-<img src="file:///c:\Users\lasth\Documents\mnlp-blog\Hallucination%20Rates%20for%20Flores-100%20and%20TICO%20on%20Low-Resource%20Languages.png" alt="Average Hallucination Rates on Flores-100 and TICO for Low-Resource Languages">
-<img src="file:///c:\Users\lasth\Documents\mnlp-blog\Hallucination%20Rates%20for%20Flores-100%20and%20TICO%20on%20Mid-Resource%20Languages.png" alt="Average Hallucination Rates on Flores-100 and TICO for Mid-Resource Languages">
-<img src="file:///c:\Users\lasth\Documents\mnlp-blog\Hallucination%20Rates%20on%20Flores-100%20and%20TICO%20on%20High-Resource%20Languages.png" alt="Average Hallucination Rates on Flores-100 and TICO for High-Resource Languages"></p>
+<img src="Hallucination Rates for Flores-100 and TICO on Low-Resource Languages.png" alt="Average Hallucination Rates on Flores-100 and TICO for Low-Resource Languages">
+<img src="Hallucination Rates for Flores-100 and TICO on Mid-Resource Languages.png" alt="Average Hallucination Rates on Flores-100 and TICO for Mid-Resource Languages">
+<img src="Hallucination Rates on Flores-100 and TICO on High-Resource Languages.png" alt="Average Hallucination Rates on Flores-100 and TICO for High-Resource Languages"></p>
 </li>
 <li>
 <p><strong>A different translation model can serve as fall back to mitigate hallucinations</strong>
 A method of using a fall-back model when hallucination occurs is also studied. In general, this greatly improves the overall performance. In paritcular, models such as NLLB and GPT would greatly improve performance in low resource scenarios, similarly when serving as fall-back for smaller models. In the graph below, we can see that SMaLL100 and M2M(S) are both greatly improved by their fall-back models when resources are high.
-<img src="file:///c:\Users\lasth\Documents\mnlp-blog\fall_back_discussion.png" alt="Performance with fall back models"></p>
+<img src="fall_back_discussion.png" alt="Performance with fall back models"></p>
 </li>
 </ul>
 <h3 id="conclusion">Conclusion</h3>
