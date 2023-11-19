@@ -11,7 +11,7 @@ In fact, hallucinations isn’t necessarily a bad thing. Depending on the scenar
 
   
 
-We will follow the paper **Hallucinations in Large Multilingual Translation Models** to take a close look into this phenomenon of “hallucination” by large language models.
+We will follow the paper [**Hallucinations in Large Multilingual Translation Models** (Guerreiro et al., 2023)](https://arxiv.org/abs/2303.16104) to take a close look into this phenomenon of “hallucination” by large language models.
 
 ### What does LLM’s hallucination look like
 
