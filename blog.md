@@ -119,7 +119,7 @@ Not only do toxic hallucinations - hallucinations that contain words classified 
 In contrast to earlier work on hallucinations in specialized domains that focused on small models trained on a single domain, the vastly generalized training corpus across a broad range of domains of the M2M models potentially minimzes the effect of domain shift and reduces the chances of hallucinations. \
 ![Average Hallucination Rates on Flores-100 and TICO for Low-Resource Languages](./Hallucination%20Rates%20for%20Flores-100%20and%20TICO%20on%20Low-Resource%20Languages.png) 
 ![Average Hallucination Rates on Flores-100 and TICO for Mid-Resource Languages](./Hallucination%20Rates%20for%20Flores-100%20and%20TICO%20on%20Mid-Resource%20Languages.png) 
-![Average Hallucination Rates on Flores-100 and TICO for High-Resource Languages](./Hallucination%20Rates%20on%20Flores-100%20and%20TICO%20on%20High-Resource%20Languages.png) \
+![Average Hallucination Rates on Flores-100 and TICO for High-Resource Languages](./Hallucination%20Rates%20on%20Flores-100%20and%20TICO%20on%20High-Resource%20Languages.png)
 
 ### Conclusion
 The case study by Guerreiro et al. provides good insight into the properties of hallucinations in large-scale translation models.  Although, as the authors themselves acknowledge, there are limitations to their conclusions and the generalizability to other large-scale multilingual models, it is a good start into bridging the knowledge gap between small-scale dedicated translation models and large-scale multilingual translation models.
