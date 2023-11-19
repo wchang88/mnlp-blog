@@ -91,6 +91,7 @@ In contrast to hallucinations under perturbation where hallucinations are purpos
     ![Example of oscillatory hallucination](./oscillatory%20hallucination.png)
  
 #### Key Insights
+![Hallucination rate on resource level](./resouce_level_line_graph.png) 
 -  **Hallucination rates under perturbation decrease as resource levels increase** \
 More parallel data allows for models to better handle source-side errors. 
 
