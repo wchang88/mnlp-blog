@@ -4,15 +4,15 @@ Winnie Chang [winniech] and Tianyue Ou[tianyueo], Multilingual Natural Language 
 
 >  What is Hallucination?
 
-When think of the word “**hallucination**,” you may think of wild dreams, you may think of a past experience of waking up in the middle of the night and seeing a mysterious figure in the corner of your room, and it vanishes before you can stare at it. You may think of the feeling of recalling that you have been to a place while really it was your first time there. The term, hallucination, is indeed, eye-catching when applied to large language models. It almost gives a sense of humanity to machine learning models. **For a long time, we relate hallucination to humans**, we thought hallucination is something special to humans or animals.That it is something special to us, to intelligent beings. Could machine learning models have hallucinations? Is there a correlation between the level of intelligence or complexity of mind and hallucination. Is there a threshold one needs to meet to acquire the ability of hallucination? If machines could hallucinate, in what way would they hallucinate? In what forms would their hallucinations be? Would they be in the form of dreams? Would a machine have the false feeling of having been to a place or seeing something while really it was its first time there? Or is it something else? Is it something different than the hallucinations, we as humans, are used to know about.
+When think of the word “**hallucination**,” you may think of wild dreams, you may think of a past experience of waking up in the middle of the night and seeing a mysterious figure in the corner of your room, and it vanishes before you can stare at it. You may think of the feeling of recalling that you have been to a place while really it was your first time there. The term, hallucination, is indeed, eye-catching when applied to language models. It almost gives a sense of humanity to machine learning models. **For a long time, we relate hallucination to humans**, we thought hallucination is something special to humans or animals.That it is something special to us, to intelligent beings. Could machine learning models have hallucinations? Is there a correlation between the level of intelligence or complexity of mind and hallucination. Is there a threshold one needs to meet to acquire the ability of hallucination? If machines could hallucinate, in what way would they hallucinate? In what forms would their hallucinations be? Would they be in the form of dreams? Would a machine have the false feeling of having been to a place or seeing something while really it was its first time there? Or is it something else? Is it something different than the hallucinations, we as humans, are used to know about.
 
 In fact, hallucinations isn’t necessarily a bad thing. Depending on the scenarios, when it comes to creative writing, hallucinations, or maybe in more accurate terms, imaginations are essential to bring out good stories. Yet to make a machine learning model for our use, we want to be able to control their hallucinations. We don’t want any “hallucinations” when there shouldn’t be, for instance, when doing math, when summarizing articles, or when doing translation from one language to another.
 
-**In this blog, we want to dive into the phenomenon of hallucinations by large language models.** We want to start from something concrete: a specific task, machine translations.
+**In this blog, we want to dive into the phenomenon of hallucinations by large translation models.** We want to start from something concrete: a specific task, machine translations.
 
   
 
-We will follow the paper [**Hallucinations in Large Multilingual Translation Models** (Guerreiro et al., 2023)](https://arxiv.org/abs/2303.16104) to take a close look into this phenomenon of “hallucination” by large language models.
+We will follow the paper [**Hallucinations in Large Multilingual Translation Models** (Guerreiro et al., 2023)](https://arxiv.org/abs/2303.16104) to take a close look into this phenomenon of “hallucination” by large translation models.
 
 ### What does LLM’s hallucination look like
 
@@ -92,9 +92,9 @@ In contrast to hallucinations under perturbation where hallucinations are purpos
     ![Example of oscillatory hallucination](./oscillatory%20hallucination.png)
  
 #### Key Insights
-![Hallucination rate on resource level](./resouce_level_line_graph.png) 
 -  **Hallucination rates under perturbation decrease as resource levels increase** \
-More parallel data allows for models to better handle source-side errors. 
+More parallel data allows for models to better handle source-side errors.
+![Hallucination rate on resource level](./resouce_level_line_graph.png) 
 
 - **Uniform sampling across all language pairs during training could reduce hallucinations** \
  The authors observed that SMaLL100 hallucinated less than its parent, which suggests that uniform sampling to reduce bias towards high-resource languages could help with mid- and low-resource languages. 
